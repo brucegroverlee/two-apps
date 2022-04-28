@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('stage one') {
       steps {
-        sh 'node ./src/index.js'
+        sh 'node ./app-one/src/index.js'
       }
     }
   }
