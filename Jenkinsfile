@@ -1,12 +1,10 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:17-alpine'
-      args '-p 3000:3000'
-    }
-  }
+  agent any
   stages {
     stage('stage one') {
+      agent {
+        node { label 'nodejs' }
+      }
       steps {
         sh 'node ./app-one/src/index.js'
       }
